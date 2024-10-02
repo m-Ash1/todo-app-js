@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  outline: none;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #070606;
+  height: 100vh;
+  font-size: 18px;
+}
+.image-header {
+  background-image: url("../images/bg-desktop-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+}
+
+.header .icon-switch {
+  cursor: pointer;
+}
+/* T O D O LIST STYLE */
+.todo-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 700px;
+  width: 650px;
+  max-width: calc(100% - 2rem);
+}
+
+.input {
+  background-color: #f5f7f8;
+  color: #070606;
+}
+.list {
+  border-radius: 7px;
+  overflow: hidden;
+}
+.header {
+  color: white;
+  display: flex;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 15px;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.check,
+.input-check {
+  border: 1px solid hsl(237, 14%, 26%);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.checked-title {
+  text-decoration: line-through;
+  color: hsl(234, 11%, 52%);
+}
+.check img,
+.input-check img {
+  opacity: 0;
+}
+.checked {
+  background: linear-gradient(
+    326deg,
+    hsl(180, 11%, 2%) 0%,
+    hsl(0, 0%, 0%) 100%
+  );
+}
+.checked img {
+  opacity: 1;
+}
+input::placeholder {
+  color: hsl(236, 15%, 38%);
+  font-family: "Josefin Sans", sans-serif;
+}
+.check:hover,
+.input-check:hover {
+  background: linear-gradient(
+    326deg,
+    hsl(180, 11%, 2%) 0%,
+    hsl(0, 0%, 0%) 100%
+  );
+  border: 1px solid transparent;
+}
+
+.list .input {
+  margin-bottom: 20px;
+  border-radius: 7px;
+}
+.list .input,
+.list .item,
+.list-footer {
+  display: flex;
+  padding: 25px 20px;
+  gap: 20px;
+}
+.list-body {
+  border-radius: 7px 7px 0 0;
+  overflow: hidden;
+  box-shadow: 0px 23px 32px 6px rgb(0 0 0 / 20%);
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  width: 85%;
+  color: #070606;
+  outline: none;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.list-footer {
+  justify-content: space-between;
+  font-size: 16px;
+  color: hsl(234, 11%, 52%) !important;
+  background-color: #f5f7f8;
+}
+.filters {
+  display: flex;
+}
+.filters .filter {
+  margin-right: 8px;
+  transition: 0.3s;
+}
+.active {
+  color: hsl(220, 78%, 38%);
+}
+.filters .filter:hover,
+.clear:hover {
+  color: hsl(234, 39%, 85%);
+  cursor: pointer;
+}
+.title {
+  color: black;
+  background-color: #f5f7f8;
+  align-items: center;
+}
+.cross {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+.title:hover {
+  cursor: pointer;
+}
+.title:hover .cross {
+  opacity: 1;
+}
+
+.task-text {
+  flex-grow: 1;
+}
+
+/* Add this to your CSS file */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f5f7f8;
+  color: #070606;
+  padding: 15px 30px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, top 0.4s ease;
+  z-index: 1000;
+  font-size: 0.9rem;
+}
+
+.notification.show {
+  opacity: 1;
+  pointer-events: auto;
+  top: 40px;
+}
+
+@media (max-width: 450px) {
+  .image-header {
+    height: 300px;
+  }
+
+  .list-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cross {
+    opacity: 1;
+  }
+}
